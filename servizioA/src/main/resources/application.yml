@@ -33,3 +33,25 @@ spring:
 uname: Alberto
 feign:
   client: servizioc
+---
+#spring.main.web-application-type: 'NONE '
+asw:
+  progetto:
+    channel:
+      out: asw.kafka.channel.alpha
+    groupid: simple-producer
+
+spring:
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      group-id: ${asw.kafka.groupid}
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+         spring.json.trusted.packages: '*'
+    producer:
+      key-serializer: 
+        org.apache.kafka.commongroup-id: ${asw.kafka.groupid}.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer

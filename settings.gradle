@@ -1,7 +1,0 @@
-include 'servizioA'
-include 'servizioB'
-include 'servizioC'
-include 'eureka-server'
-include 'zuul-gateway'
-
-rootProject.name = 'Containerized_distributed_app'
