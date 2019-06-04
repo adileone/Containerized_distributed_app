@@ -22,7 +22,7 @@ public class ConsumerService {
 	public String filter(String inMessage) {
 
 		String nome = name;
-		String call = "sightings="+nome +":"+inMessage;
+		String call = nome +":"+inMessage;
 		logger.info(call);
 		cService.callC(call);
 		return call;
