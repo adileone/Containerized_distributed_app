@@ -4,6 +4,7 @@ import java.util.logging.Logger;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 
@@ -20,7 +21,7 @@ public class CServiceImpl implements Cservice {
 	private CClient cClient;
 
 	@HystrixCommand(fallbackMethod="getFallbackWord")
-	public String callC(String sightings) {
+	public String callC(@RequestParam("sightings") String sightings) {
 		logger.info("XXX qui la chiamata: sto passando " + sightings );
 		return cClient.callC(sightings); 
 	}

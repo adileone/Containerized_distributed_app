@@ -2,14 +2,18 @@
 
 # Client per comunicare avvistamenti tramite chiamate REST
 
-echo POST to serviceA animal=lupo &
+echo POST to serviceA animal=lupo 
 	
-curl --data 'animal=lupo' http://localhost:8080/servizioa/ &
+curl --data 'animal=lupo' http://localhost:8080/servizioa/ 
 
-echo POST to serviceA/kafka animal=cane &
+sleep 3
 
-curl --data 'animal=cane' http://localhost:8080/servizioa/kafka &
+echo POST to serviceA/kafka animal=cane 
 
-echo GET to serviceA/ to retrieve sightings list &
+curl --data 'animal=cane' http://localhost:8080/servizioa/kafka
+
+sleep 3
+
+echo GET to serviceA/ to retrieve sightings list 
 
 curl http://localhost:8080/servizioa

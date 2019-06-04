@@ -20,13 +20,13 @@ public class AserviceController {
 
 	private final Logger logger = Logger.getLogger(AserviceController.class.toString()); 
 
-	@PostMapping
-	public void getAnimal(@RequestParam String animal) {
+	@PostMapping()
+	public void getAnimal(@RequestParam("animal") String animal) {
 		logger.info("callC(): " + aservice.getCall(animal));
 	}
-	
+
 	@PostMapping(value="/kafka")
-	public void getAnimalKafka(@RequestParam String animal) {
+	public void getAnimalKafka(@RequestParam("animal") String animal) {
 		logger.info("connectedToKafkaTopic(): " + aservice.getKafkaCall(animal));
 	}
 

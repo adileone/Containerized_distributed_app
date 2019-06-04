@@ -25,7 +25,7 @@ public class Aservice {
 	public String getCall(String animal) {
 
 		String nome = name;
-		String call = "sightings="+nome +":"+animal;
+		String call = nome +":"+animal;
 		logger.info(call);
 		cService.callC(call);
 		return call;
@@ -37,7 +37,7 @@ public class Aservice {
 
 	public String getKafkaCall(String animal) {
 		String nome = name;
-		String call = "sightings="+nome +":"+animal;
+		String call = nome +":"+animal;
 		logger.info("sending message: " + call);
 		simpleProducerService.publish(call); 
 		return call;
