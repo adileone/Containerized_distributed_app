@@ -1,7 +1,6 @@
 # Progetto Architettura dei sistemi software
 
-Progetto del corso di Architettura dei sistemi software relativo alla sperimentazione pratica di 
-alcune tecnologie studiate durante il corso.
+Progetto per il corso Architettura dei sistemi software tenuto dal Prof. Luca Cabibbo per l'A.A. 2018/2019, relativo alla sperimentazione pratica di alcune tecnologie studiate.
 
 Riguarda la realizzazione di una semplice applicazione distribuita, composta da tre servizi ai quali possono essere associati diversi profili, nonché il rilascio di questa applicazione in un opportuno ambiente di esecuzione distribuito (Docker).
 
@@ -17,7 +16,7 @@ Un servizio secondario B, che è un ascoltatore di messaggi dal canale Z.
 Un  servizio  secondario  C,  che  può  ricevere  richieste  da  un  client  HTTP/REST,  per  le 
 operazioni POST / e GET /.  
 
-![Alt text](arc.jpg?raw=true "arc")
+![Alt text](arc.png)
 
 Tecnologie utilizzate:
 
