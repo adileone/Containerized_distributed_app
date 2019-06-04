@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
+
 @Service
 public class Aservice {
 
@@ -15,6 +16,9 @@ public class Aservice {
 
 	@Autowired 
 	private Cservice cService;
+
+	@Autowired
+	private SimpleProducerService simpleProducerService;
 
 	private final Logger logger = Logger.getLogger(Aservice.class.toString()); 
 
@@ -29,5 +33,13 @@ public class Aservice {
 
 	public String getCallforGet() {
 		return cService.callCGet(); 
+	}
+
+	public String getKafkaCall(String animal) {
+		String nome = name;
+		String call = "sightings="+nome +":"+animal;
+		logger.info("sending message: " + call);
+		simpleProducerService.publish(call); 
+		return call;
 	}
 }

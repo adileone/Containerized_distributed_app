@@ -24,6 +24,11 @@ public class AserviceController {
 	public void getAnimal(@RequestParam String animal) {
 		logger.info("callC(): " + aservice.getCall(animal));
 	}
+	
+	@PostMapping(value="/kafka")
+	public void getAnimalKafka(@RequestParam String animal) {
+		logger.info("connectedToKafkaTopic(): " + aservice.getKafkaCall(animal));
+	}
 
 	@GetMapping
 	public String callCforGet() {
