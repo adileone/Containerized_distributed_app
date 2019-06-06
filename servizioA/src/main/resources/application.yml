@@ -6,7 +6,8 @@ spring:
 eureka: 
   client: 
     serviceUrl: 
-      defaultZone: http://localhost:8761/eureka/
+#     defaultZone: http://localhost:8761/eureka/
+      defaultZone: http://eureka-server:8761/eureka/	
   instance: 
     leaseRenewalIntervalInSeconds: 10
     metadataMap: 
@@ -43,7 +44,8 @@ asw:
 
 spring:
   kafka:
-    bootstrap-servers: localhost:9092
+#    bootstrap-servers: localhost:9092
+    bootstrap-servers: ${DOCKER_HOST_IP}:9092
     consumer:
       group-id: ${asw.kafka.groupid}
       auto-offset-reset: earliest
