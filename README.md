@@ -18,11 +18,40 @@ operazioni POST / e GET /.
 
 ![Alt text](arc.png)
 
-Tecnologie utilizzate:
+## Tecnologie utilizzate:
 
--Spring Boot/Spring Cloud.  
--Kafka
--Eureka(service  discovery)
--Ribbon  e  Feign  (per le chiamate rest)
--Zuul (per esporre il servizio offerto da A sulla porta 8080 di localhost).
+ * Spring Boot/Spring Cloud.  
+ * Kafka
+ * Eureka(service  discovery)
+ * Ribbon  e  Feign  (per le chiamate rest)
+ * Zuul (per esporre il servizio offerto da A sulla porta 8080 di localhost).
 
+## Startup
+
+```
+run build-all-projects.sh
+```
+
+### Locale
+
+```
+run-all.sh
+```
+
+a fine esecuzione:
+
+```
+run stop-java-processes.sh
+```
+
+### Docker
+
+```
+docker-compose up --build
+```
+
+### CLient
+
+```
+run sightings-client.sh
+```
