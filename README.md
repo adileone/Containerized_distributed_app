@@ -34,6 +34,12 @@ run build-all-projects.sh
 
 ### Locale
 
+start Kafka cluster first:
+```
+run kafka/start-kafka.sh
+```
+
+then:
 ```
 run-all.sh
 ```
@@ -42,6 +48,7 @@ a fine esecuzione:
 
 ```
 run stop-java-processes.sh
+run kafka/stop-kafka.sh
 ```
 
 ### Docker
@@ -50,7 +57,9 @@ run stop-java-processes.sh
 docker-compose up --build
 ```
 
-### CLient
+### Client
+
+N.B. una volta aver eseguito il docker compose è bene attendere qualche secondo per far si che tutti i servizi possano registrarsi adeguatamente, prima di eseguire il client:
 
 ```
 run sightings-client.sh
