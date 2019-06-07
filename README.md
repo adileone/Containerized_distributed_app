@@ -64,3 +64,10 @@ N.B. una volta aver eseguito il docker compose è bene attendere qualche secondo
 ```
 run sightings-client.sh
 ```
+
+Inoltre sono state esposte le porte:
+ * http://localhost:8761 -- per visualizzare i servizi registrati presso eureka
+ * http://localhost:8080/ -- tramite API-Gateway è presente una pagina HTML, per visualizzare la lista memorizzata dal servizioC corrispondente, cliccando su 'visualizza'.
+
+Per ogni servizio è possibile eseguire più stanze dello stesso.
+
